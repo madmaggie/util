@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>Movies</groupId>
-    <artifactId>Movies</artifactId>
+    <groupId>Utilities</groupId>
+    <artifactId>Utilities</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -53,6 +53,12 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.0.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.20</version>
         </dependency>
     </dependencies>
 </project>
