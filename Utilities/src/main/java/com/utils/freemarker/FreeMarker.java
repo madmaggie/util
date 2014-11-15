@@ -1,9 +1,6 @@
 package com.utils.freemarker;
 
-import freemarker.template.Configuration;
-import freemarker.template.ObjectWrapper;
-import freemarker.template.Template;
-import freemarker.template.TemplateExceptionHandler;
+import freemarker.template.*;
 
 import java.io.File;
 import java.io.StringWriter;
@@ -32,8 +29,8 @@ public class FreeMarker {
             // Initialize configuration;
             cfg = new Configuration();
             cfg.setDirectoryForTemplateLoading(new File(templateLocation));
-          //  cfg.setTemplateUpdateDelay(0);
-          //  cfg.setTemplateExceptionHandler(TemplateExceptionHandler.HTML_DEBUG_HANDLER);
+            cfg.setTemplateUpdateDelay(0);
+            cfg.setTemplateExceptionHandler(TemplateExceptionHandler.HTML_DEBUG_HANDLER);
 
             //Use beans wrapper
             cfg.setObjectWrapper(ObjectWrapper.BEANS_WRAPPER);
@@ -45,14 +42,25 @@ public class FreeMarker {
             //default locale
             cfg.setLocale(Locale.US);
 
+
+            SimpleHash root = new SimpleHash(wrapper);
+            // expose a "simple" java objects:
+            root.put("theString", "wombat");
+            // expose an "arbitrary" java objects:
+            root.put("theObject", new TestObject("green mouse", 1200));
+
         } catch (Exception e) {
             //handle the exception
         }
+
+
     }
 
     public static String processTemplate(TemplateClass dataObject) {
         String strResponse = null;
         try {
+
+
             Template template = cfg.getTemplate(templateFileName);
             Writer out = new StringWriter();
             template.process(dataObject, out);

@@ -1,2 +1,10 @@
+    TemplateClass tc = new TemplateClass(John, 27)
 
-    <Name>${TemplateClass.firstName?xml} ${TemplateClass.lastName?xml}</Name>
+
+    <Name>
+        ${tc.name}
+    </Name>
+
+    <Age>
+        ${tc.age}
+    </Age>
