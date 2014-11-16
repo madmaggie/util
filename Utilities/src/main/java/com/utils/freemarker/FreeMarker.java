@@ -18,12 +18,6 @@ public class FreeMarker {
 
     private static String templateFileName = "simpleTemplate.ftl";
 
-    public static void main (String [] args) {
-            initConfig();
-            String out = processTemplate(new TemplateClass("John Smith", 27));
-            System.out.println(out);
-    }
-
     public static void initConfig() {
         try {
             // Initialize configuration;
@@ -46,8 +40,6 @@ public class FreeMarker {
         } catch (Exception e) {
             //handle the exception
         }
-
-
     }
 
     public static String processTemplate(TemplateClass dataObject) {
