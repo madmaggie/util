@@ -43,12 +43,6 @@ public class FreeMarker {
             cfg.setLocale(Locale.US);
 
 
-            SimpleHash root = new SimpleHash(wrapper);
-            // expose a "simple" java objects:
-            root.put("theString", "wombat");
-            // expose an "arbitrary" java objects:
-            root.put("theObject", new TestObject("green mouse", 1200));
-
         } catch (Exception e) {
             //handle the exception
         }
@@ -59,8 +53,6 @@ public class FreeMarker {
     public static String processTemplate(TemplateClass dataObject) {
         String strResponse = null;
         try {
-
-
             Template template = cfg.getTemplate(templateFileName);
             Writer out = new StringWriter();
             template.process(dataObject, out);
