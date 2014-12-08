@@ -19,12 +19,12 @@ public class FreeMarkerTest {
     private FreeMarker myFreeMarker = new FreeMarker();
 
     @Before
-    public void generateMovie() {
+    public void init() {
         myFreeMarker.initConfig();
     }
 
     @Test
-    public void calculateToBeMoved() {
+    public void mapXml() {
         // GIVEN
         TemplateClass input = new TemplateClass("John Snow", 23);
 
