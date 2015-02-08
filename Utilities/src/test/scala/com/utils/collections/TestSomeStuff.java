@@ -1,4 +1,4 @@
-package com.utils.course;
+package com.utils.collections;
 
 import com.utils.collections.SomeSuff;
 import com.utils.spark.SparkSimpleOperations;
