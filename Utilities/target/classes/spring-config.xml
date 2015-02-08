@@ -13,6 +13,7 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.utils.course"/>
     <context:component-scan base-package="com.utils.spark"/>
+    <context:component-scan base-package="com.utils.collections"/>
     <util:properties id="props" location="file:src/main/resources/utilApp.properties"/>
     <context:property-placeholder location="file:src/main/resources/utilApp.properties"/>
 
